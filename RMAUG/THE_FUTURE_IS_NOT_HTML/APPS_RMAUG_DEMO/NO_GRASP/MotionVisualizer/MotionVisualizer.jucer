@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="ia4cwf" name="MotionVisualizer" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.leap.MotionVisualizer" jucerVersion="3.0.0"
+              companyName="Leap Motion" defines="LEAP_SCENE_USE_UTIL_GL=1">
+  <EXPORTFORMATS>
+    <VS2010 targetFolder="Builds/VisualStudio2010" libraryType="1" juceFolder="..\ThirdParty\JUCE\modules"
+            externalLibraries="leap.lib">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="MotionVisualizer" libraryPath="..\..\..\..\LeapSDK\lib\x86"
+                       headerPath="..\..\..\..\LeapSDK\include;..\..\..\..\LeapSDK\util"
+                       postbuildCommand="copy /Y ..\..\..\..\LeapSDK\lib\x86\Leap.dll $(TargetDir)"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="3" targetName="MotionVisualizer" libraryPath="..\..\..\..\LeapSDK\lib\x86"
+                       headerPath="..\..\..\..\LeapSDK\include;..\..\..\..\LeapSDK\util"
+                       postbuildCommand="copy /Y ..\..\..\..\LeapSDK\lib\x86\Leap.dll $(TargetDir)"/>
+      </CONFIGURATIONS>
+    </VS2010>
+    <VS2008 targetFolder="Builds/VisualStudio2008" libraryType="1" juceFolder="..\ThirdParty\JUCE\modules"
+            externalLibraries="leap.lib" extraDefs="JUCE_USE_DIRECTWRITE=0">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" isDebug="1"
+                       optimisation="1" targetName="MotionVisualizer" headerPath="..\..\..\..\LeapSDK\include;..\..\..\..\LeapSDK\util"
+                       libraryPath="..\..\..\..\LeapSDK\lib\x86" postbuildCommand="copy /Y ..\..\..\..\LeapSDK\lib\x86\Leap.dll $(TargetDir)"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" isDebug="0"
+                       optimisation="3" targetName="MotionVisualizer" headerPath="..\..\..\..\LeapSDK\include;..\..\..\..\LeapSDK\util"
+                       libraryPath="..\..\..\..\LeapSDK\lib\x86" postbuildCommand="copy /Y ..\..\..\..\LeapSDK\lib\x86\Leap.dll $(TargetDir)"/>
+      </CONFIGURATIONS>
+    </VS2008>
+    <XCODE_MAC targetFolder="Builds/MacOSX" juceFolder="../ThirdParty/JUCE/modules"
+               externalLibraries="Leap" postbuildCommand=" cp -f ../../../../LeapSDK/lib/libLeap.dylib &quot;${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}&quot;"
+               objCExtraSuffix="rEqQpv">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.6 SDK" osxArchitecture="64BitUniversal"
+                       isDebug="1" optimisation="1" targetName="MotionVisualizer" headerPath="../../../../LeapSDK/include;../../../../LeapSDK/util&#10;"
+                       libraryPath="../../../../LeapSDK/lib"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.6 SDK" osxArchitecture="64BitUniversal"
+                       isDebug="1" optimisation="3" targetName="MotionVisualizer" headerPath="../../../../LeapSDK/include;../../../../LeapSDK/util&#10;"
+                       libraryPath="../../../../LeapSDK/lib"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+    <LINUX_MAKE targetFolder="Builds/Linux" juceFolder="..\ThirdParty\JUCE\modules"
+                externalLibraries="Leap" extraLinkerFlags="-lLeap -Wl,-rpath,\$$ORIGIN/../../../../../LeapSDK/lib/$(shell [[ $$(uname -m) == x86_64 &amp;&amp; &quot;$(TARGET_ARCH)&quot; == &quot;-march=native&quot; ]] &amp;&amp; echo x64 || echo x86),-rpath,\$$ORIGIN/../../LeapSDK/lib/$(shell [[ $$(uname -m) == x86_64 &amp;&amp; &quot;$(TARGET_ARCH)&quot; == &quot;-march=native&quot; ]] &amp;&amp; echo x64 || echo x86)"
+                extraCompilerFlags="">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib;../../../../LeapSDK/lib/$(shell [[ $$(uname -m) == x86_64 &amp;&amp; &quot;$(TARGET_ARCH)&quot; == &quot;-march=native&quot; ]] &amp;&amp; echo x64 || echo x86)"
+                       isDebug="1" optimisation="1" targetName="MotionVisualizer" headerPath="../../../../LeapSDK/include;../../../../LeapSDK/util"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib;../../../../LeapSDK/lib/$(shell [[ $$(uname -m) == x86_64 &amp;&amp; &quot;$(TARGET_ARCH)&quot; == &quot;-march=native&quot; ]] &amp;&amp; echo x64 || echo x86)"
+                       isDebug="0" optimisation="2" targetName="MotionVisualizer" headerPath="../../../../LeapSDK/include;../../../../LeapSDK/util"/>
+      </CONFIGURATIONS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MAINGROUP id="ubZ7tF" name="MotionVisualizer">
+    <GROUP id="{91606178-E538-800B-126C-598ECFC03BAE}" name="LeapUtil">
+      <FILE id="wnsQdj" name="LeapUtil.cpp" compile="1" resource="0" file="../../LeapSDK/util/LeapUtil.cpp"/>
+      <FILE id="V10fDS" name="LeapUtil.h" compile="0" resource="0" file="../../LeapSDK/util/LeapUtil.h"/>
+      <FILE id="lrii6h" name="LeapUtilGL.cpp" compile="1" resource="0" file="../../LeapSDK/util/LeapUtilGL.cpp"/>
+      <FILE id="w3OtFR" name="LeapUtilGL.h" compile="0" resource="0" file="../../LeapSDK/util/LeapUtilGL.h"/>
+    </GROUP>
+    <GROUP id="{9B554D88-6C00-1ECE-CE32-354721AC96D7}" name="Source">
+      <FILE id="enEc3H" name="README.txt" compile="0" resource="0" file="README.txt"/>
+      <FILE id="aZ63qg" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_audio" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

@@ -1,0 +1,31 @@
+RMAUG FUTURE
+
+
+
+LEAP
+
+NASA JPL controls rover with Leap Motion, shows faith in consumer hardware
+http://www.engadget.com/2013/03/30/nasa-athlete-rover-leap-motion/
+
+
+* techno guy doing live performance?
+
+* www.leapmotion.com
+
+
+
+KINECT
+
+* webcam ( computer vision )
+
+* skeleton tracking
+
+* sound tracking
+
+
+
+WIIMOTE
+
+* IR camera
+
+* accelerometer

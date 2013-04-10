@@ -1,0 +1,47 @@
+RMAUG CODE DEMOS
+
+
+
+	BUILD KINECT_WEBCAM
+
+
+	1. Demo the three possible cameras  ( camera feeds? RGB, Depth, Grayscale )
+
+	2. Use LEAP finger detection to switch between camera modes
+		1 fingers	= webcam
+		2 fingers	= depth image?
+		3 fingers	= point cloud style camera 
+
+P5 - KINECT NOTES
+
+FOR THE P5 KINECT TUTORIAL
+http://ericmedine.com/tutorials/LECTURE_kinect_hacking.htm
+
+If you get to 	STEP FOUR: Open NI and bomb out at this error
+
+	"sudo port install libusb-devel +universal
+
+	--->  Configuring libusb-devel
+	Error: Please do not install this port since it has been replaced by 'libusb'.
+	"
+
+Fixed by running
+
+"sudo rm -f /opt/local/lib/libusb-1.0.0.dylib"
+"sudo port clean libusb"
+"sudo port install libusb +universal"
+
+Basically the Mac install instructions need to be updated and should include a warning that the short install may leave files around that will need to be deleted before installing with port.
+
+
+
+VIDEO DEMOS FOR LIVE PRESO
+
+- KINECT TRACKING
+https://vimeo.com/55901029#
+
+
+- WII
+
+
+- LEAP
