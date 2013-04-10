@@ -66,7 +66,7 @@ void draw(){
 
       
       kinect.enableIR(true);
-      
+      filter(INVERT);
       
       image( kinect.getDepthImage(), 0, 0 );
       
